@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>D C S K P G College | Premier Educational Institution</title>
+    <!-- Google Fonts + Font Awesome for Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fafcff;
+            color: #1e293b;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        /* container utility */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* header & navigation */
+        .main-header {
+            background: linear-gradient(135deg, #0b2b3b 0%, #123e52 100%);
+            color: white;
+            padding: 20px 0 16px 0;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .college-name h1 {
+            font-size: 1.8rem;
+            letter-spacing: -0.3px;
+            font-weight: 800;
+        }
+
+        .college-name p {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            margin-top: 6px;
+            font-weight: 400;
+        }
+
+        .managed-by {
+            background: rgba(255,215,0,0.18);
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            backdrop-filter: blur(2px);
+        }
+
+        .nav-links {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 16px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.2s;
+            font-size: 1rem;
+            letter-spacing: 0.2px;
+        }
+
+        .nav-links a i {
+            margin-right: 6px;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a:hover {
+            color: #ffd966;
+            transform: translateY(-1px);
+        }
+
+        /* hero section */
+        .hero {
+            background: linear-gradient(110deg, #eef4ff 0%, #ffffff 100%);
+            padding: 60px 0 56px;
+        }
+
+        .hero-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .hero-content {
+            flex: 1.4;
+        }
+
+        .hero-content h2 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            line-height: 1.2;
+            color: #0b2b3b;
+            margin-bottom: 20px;
+        }
+
+        .hero-highlight {
+            color: #c2410c;
+            border-left: 4px solid #f97316;
+            padding-left: 18px;
+            font-weight: 600;
+            background: #fff2e6;
+            display: inline-block;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            margin: 24px 0 20px;
+            color: #2d3a48;
+        }
+
+        .contact-card-small {
+            background: white;
+            border-radius: 24px;
+            padding: 18px 24px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+            margin-top: 20px;
+            display: inline-block;
+            width: 100%;
+            max-width: 380px;
+        }
+
+        .contact-card-small i {
+            width: 28px;
+            color: #0f5c7a;
+        }
+
+        .hero-stats {
+            flex: 1;
+            background: white;
+            border-radius: 32px;
+            padding: 32px;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
+        }
+
+        .stat-item {
+            margin-bottom: 24px;
+        }
+
+        .stat-number {
+            font-weight: 800;
+            font-size: 2rem;
+            color: #155e75;
+        }
+
+        /* section shared */
+        .section {
+            padding: 70px 0 60px;
+            border-bottom: 1px solid #e9edf2;
+        }
+
+        .section-alt {
+            background-color: #f8fafc;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #0c4a6e;
+            margin-bottom: 32px;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #f97316;
+            border-radius: 4px;
+        }
+
+        /* cards for facilities */
+        .faculty-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px;
+            margin-top: 20px;
+        }
+
+        .card-feature {
+            background: white;
+            border-radius: 28px;
+            padding: 28px 20px;
+            flex: 1 1 220px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            transition: all 0.2s;
+            border: 1px solid #eef2f6;
+            text-align: center;
+        }
+
+        .card-feature i {
+            font-size: 2.5rem;
+            color: #e06c2e;
+            margin-bottom: 18px;
+        }
+
+        .card-feature h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        /* pages content (privacy, terms, contact) */
+        .legal-content {
+            background: white;
+            border-radius: 32px;
+            padding: 40px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.03);
+            border: 1px solid #eef2f8;
+        }
+
+        .legal-content h3 {
+            font-size: 1.7rem;
+            margin: 28px 0 12px 0;
+            color: #164e63;
+        }
+
+        .legal-content h3:first-of-type {
+            margin-top: 0;
+        }
+
+        .legal-content p, .legal-content li {
+            color: #2c3e44;
+            line-height: 1.6;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            margin-top: 20px;
+        }
+
+        .contact-info-box {
+            flex: 1;
+            background: #f1f5f9;
+            border-radius: 28px;
+            padding: 28px;
+        }
+
+        .contact-info-box i {
+            font-size: 2rem;
+            color: #e06c2e;
+            margin-bottom: 16px;
+        }
+
+        .map-placeholder {
+            background: #e2e8f0;
+            border-radius: 28px;
+            padding: 28px;
+            text-align: center;
+            font-style: italic;
+        }
+
+        footer {
+            background: #0a1c26;
+            color: #cddfe7;
+            padding: 32px 0 28px;
+            font-size: 0.9rem;
+        }
+
+        .footer-inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .footer-copyright {
+            text-align: center;
+            margin-top: 28px;
+            padding-top: 18px;
+            border-top: 1px solid #2c4b5a;
+            font-size: 0.8rem;
+        }
+
+        .btn-outline-light {
+            background: transparent;
+            border: 1px solid #ffd966;
+            color: #ffd966;
+            border-radius: 40px;
+            padding: 8px 18px;
+            font-weight: 500;
+            transition: 0.2s;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .btn-outline-light:hover {
+            background: #ffd966;
+            color: #0a1c26;
+        }
+
+        @media (max-width: 780px) {
+            .hero-content h2 { font-size: 1.9rem; }
+            .nav-links { gap: 18px; }
+            .legal-content { padding: 24px; }
+            .section-title { font-size: 1.7rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="main-header">
+    <div class="container">
+        <div class="logo-area">
+            <div class="college-name">
+                <h1>D C S K P G College</h1>
+                <p>Empowering Minds • Transforming Futures</p>
+            </div>
+            <div class="managed-by">
+                <i class="fas fa-handshake"></i> Managed by Sampurn Shulk Kosh
+            </div>
+        </div>
+        <div class="nav-links">
+            <a href="#home"><i class="fas fa-home"></i> Home</a>
+            <a href="#privacy"><i class="fas fa-shield-alt"></i> Privacy Policy</a>
+            <a href="#terms"><i class="fas fa-file-signature"></i> Terms & Conditions</a>
+            <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- HOME SECTION (using id="home") -->
+    <section id="home" class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <h2>Shaping Tomorrow's Leaders <br> <span class="hero-highlight">With Excellence & Values</span></h2>
+                <p>D C S K P G College is a premier educational institution committed to academic excellence, holistic development, and empowering students with quality higher education. Managed by <strong>Sampurn Shulk Kosh</strong>, the college focuses on creating a strong foundation for learning, innovation, and career growth. With experienced faculty, modern facilities, and a student-centric approach, D C S K P G College nurtures knowledge, discipline, and leadership qualities to help students achieve their academic and professional aspirations. The institution is dedicated to providing accessible education while fostering values, skills, and opportunities for a brighter future.</p>
+                <div class="contact-card-small">
+                    <i class="fas fa-map-marker-alt"></i> NIZAMUDINPURA, MAUNATH BHANJAN, SAHADATPUR, MAU, UP - 275101 <br>
+                    <i class="fas fa-phone-alt"></i> +91 9129419392 &nbsp;|&nbsp; 
+                    <i class="fas fa-envelope"></i> sarun9024@gmail.com
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item"><span class="stat-number">15+</span><br>Undergrad & PG Programs</div>
+                <div class="stat-item"><span class="stat-number">98%</span><br>Student Satisfaction</div>
+                <div class="stat-item"><span class="stat-number">50+</span><br>Expert Faculty Members</div>
+                <div class="stat-item"><span class="stat-number">2000+</span><br>Alumni Network</div>
+                <a href="#contact" class="btn-outline-light" style="margin-top: 16px; display: inline-block;"><i class="fas fa-arrow-right"></i> Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core strengths / facilities section (showcases holistic approach) -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Why D C S K P G College</h2>
+            <div class="faculty-grid">
+                <div class="card-feature"><i class="fas fa-chalkboard-user"></i><h3>Experienced Faculty</h3><p>Mentors who inspire & guide beyond syllabus</p></div>
+                <div class="card-feature"><i class="fas fa-microscope"></i><h3>Modern Facilities</h3><p>Labs, library & digital classrooms</p></div>
+                <div class="card-feature"><i class="fas fa-hand-sparkles"></i><h3>Holistic Growth</h3><p>Personality development & leadership skills</p></div>
+                <div class="card-feature"><i class="fas fa-graduation-cap"></i><h3>Career Pathways</h3><p>Placement assistance & industry readiness</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRIVACY POLICY SECTION -->
+    <section id="privacy" class="section section-alt">
+        <div class="container">
+            <div class="legal-content">
+                <h2 class="section-title" style="margin-bottom: 24px;">Privacy Policy</h2>
+                <p><strong>Effective Date:</strong> 1st January 2025</p>
+                <p>At D C S K P G College (Managed by Sampurn Shulk Kosh), we are committed to protecting the privacy and confidentiality of our students, faculty, staff, and website visitors. This Privacy Policy outlines how we collect, use, and safeguard your information when you interact with our institution online or offline.</p>
+                
+                <h3>Information We Collect</h3>
+                <p>We may collect personal information such as name, contact details, email address, academic records, and application data when you enquire, register, or use our services. Additionally, our website may collect non-personal data like browser type, IP address, and usage patterns for analytical improvements.</p>
+                
+                <h3>How We Use Information</h3>
+                <p>Your data helps us to: process admissions, provide academic support, communicate announcements, improve campus facilities, and ensure compliance with regulatory requirements. We never sell or rent personal data to third parties.</p>
+                
+                <h3>Data Security</h3>
+                <p>We implement reasonable security practices, including secure servers and restricted access, to protect your information. However, no transmission over the internet is 100% secure. Students and visitors are advised to keep their login credentials confidential.</p>
+
+                <h3>Third-Party Links</h3>
+                <p>Our website may contain links to external resources. We are not responsible for the privacy practices of other platforms. We encourage you to review their policies.</p>
+
+                <h3>Contact Us</h3>
+                <p>For any privacy-related concerns, reach us at: <strong>sarun9024@gmail.com</strong> or call +91 9129419392.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TERMS & CONDITIONS SECTION -->
+    <section id="terms" class="section">
+        <div class="container">
+            <div class="legal-content">
+                <h2 class="section-title" style="margin-bottom: 24px;">Terms & Conditions</h2>
+                <p>Welcome to the official website of D C S K P G College. By accessing or using our website, services, or admission processes, you agree to be bound by these Terms & Conditions. If you disagree with any part, please refrain from using our site.</p>
+                
+                <h3>Use of Website</h3>
+                <p>All content, logos, images, and information on this site are the intellectual property of D C S K P G College. Unauthorized reproduction, distribution, or commercial use is prohibited. You may view and download material for personal, non-commercial educational purposes.</p>
+                
+                <h3>Admission & Enrollment</h3>
+                <p>Admissions are subject to eligibility criteria, merit, and college policies. The institution reserves the right to modify admission procedures, fee structure, or academic calendar as per university regulations. Any false information provided during registration may lead to cancellation of candidature.</p>
+                
+                <h3>Code of Conduct</h3>
+                <p>Students, staff, and visitors must abide by the college’s disciplinary framework. Any act of ragging, harassment, or misconduct will lead to strict action as per UGC guidelines and applicable laws.</p>
+                
+                <h3>Limitation of Liability</h3>
+                <p>D C S K P G College shall not be held liable for any indirect, incidental, or consequential damages arising from the use of our website or temporary technical disruptions. We strive to keep information accurate but do not guarantee error-free content.</p>
+                
+                <h3>Governing Law</h3>
+                <p>These terms are governed by the laws of India. Any disputes shall be subject to the exclusive jurisdiction of courts in Gonda / Mau, Uttar Pradesh.</p>
+                <p style="margin-top: 20px;">For questions, contact: <strong>sarun9024@gmail.com</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT PAGE SECTION -->
+    <section id="contact" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-details">
+                <div class="contact-info-box">
+                    <i class="fas fa-map-pin fa-2x"></i>
+                    <h3>Visit Us</h3>
+                    <p><strong>D C S K P G College</strong><br>
+                    NIZAMUDINPURA, MAUNATH BHANJAN, SAHADATPUR, MAU,<br>
+                    UTTAR PRADESH - 275101, MAU, MANKAPUR,<br>
+                    DISTT GONDA, UP - 275101 (India)</p>
+                    <hr style="margin: 18px 0; opacity:0.3">
+                    <p><i class="fas fa-phone-alt"></i> <strong>Phone:</strong> +91 9129419392<br>
+                    <i class="fas fa-envelope"></i> <strong>Email:</strong> sarun9024@gmail.com<br>
+                    <i class="fas fa-clock"></i> <strong>Office Hours:</strong> Mon-Sat, 9:30 AM – 5:00 PM</p>
+                </div>
+                <div class="contact-info-box">
+                    <i class="fas fa-paper-plane"></i>
+                    <h3>Get in Touch</h3>
+                    <p>For admissions, partnership inquiries, or general information, please reach out via email or phone. We welcome aspiring students and parents to visit our campus in Mau (Nizamudinpura) — the serene environment fosters learning and growth.</p>
+                    <p style="margin-top: 20px;">For quick queries, drop an email and our administrative team will respond within 2 working days.</p>
+                    <div class="map-placeholder" style="margin-top: 24px;">
+                        <i class="fas fa-location-dot"></i> 📍 Locate us on Google Maps — Nizamudinpura, Maunath Bhanjan, Mau, UP
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- FOOTER with COPYRIGHT NOTICE -->
+<footer>
+    <div class="container">
+        <div class="footer-inner">
+            <div>
+                <h3 style="color:#ffd966; margin-bottom: 12px;">D C S K P G College</h3>
+                <p>Premier institution managed by Sampurn Shulk Kosh, dedicated to academic excellence and holistic student development.</p>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 8px;">Quick Links</h4>
+                <ul style="list-style: none; line-height: 1.8;">
+                    <li><a href="#home" style="color:#cddfe7; text-decoration: none;">Home</a></li>
+                    <li><a href="#privacy" style="color:#cddfe7; text-decoration: none;">Privacy Policy</a></li>
+                    <li><a href="#terms" style="color:#cddfe7; text-decoration: none;">Terms & Conditions</a></li>
+                    <li><a href="#contact" style="color:#cddfe7; text-decoration: none;">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 8px;">Reach Us</h4>
+                <p><i class="fas fa-phone-alt"></i> +91 9129419392</p>
+                <p><i class="fas fa-envelope"></i> sarun9024@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Mau, Uttar Pradesh - 275101</p>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            © 2025 D C S K P G College (Managed by Sampurn Shulk Kosh). All Rights Reserved. | Designed with commitment to education & integrity.
+        </div>
+    </div>
+</footer>
+
+<!-- Smooth scroll for in-page anchor links -->
+<script>
+    document.querySelectorAll('.nav-links a, footer a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if(targetId && targetId.startsWith('#')) {
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    e.preventDefault();
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // update url hash without jumping
+                    history.pushState(null, null, targetId);
+                }
+            }
+        });
+    });
+    // small fix for any missing home hash
+    if(window.location.hash === "") {
+        // nothing
+    }
+</script>
+</body>
+</html>
